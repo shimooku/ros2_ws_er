@@ -1,10 +1,2 @@
-# mysh拡張アイデア
-
-mysh を拡張して、ROS2 ノード間コラボレーションのプロトタイピング環境として役立つようにすることを検討してみる
-
-* ros2nodeオブジェクトの追加
-* 通信方式と役割をどう見せるか？
-  * 通信自体はオペレータコマンド化
-    * nodeオブジェクトがコマンドを実行する(nodeの中でprocをコールする形式)
-  * 役割はnodetypeという属性で管理
-  * nodeオブジェクト以外に対してnodetypeの問い合わせはTYPECHECKエラー
+Udemy class "ROS2 For Beginners" is more practical and easy to learn.
+I should've chosen this class first... Anyway it's not too late.
