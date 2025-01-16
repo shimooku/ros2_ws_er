@@ -43,4 +43,35 @@ setup(
 
  * includeでsnakeラインが出てきたら、`ROS: Update C++ Properties`を実行して c_cpp_configuration.json をアップデートする
  
- 
+## 実行中のノードを調べる
+
+ros2 node list
+
+## 実行中のノードのインターフェースを調べる
+
+% ros2 node info /py_test 
+
+/py_test
+  Subscribers:
+
+  Publishers:
+    /parameter_events: rcl_interfaces/msg/ParameterEvent
+    /rosout: rcl_interfaces/msg/Log
+  Service Servers:
+    /py_test/describe_parameters: rcl_interfaces/srv/DescribeParameters
+    /py_test/get_parameter_types: rcl_interfaces/srv/GetParameterTypes
+    /py_test/get_parameters: rcl_interfaces/srv/GetParameters
+    /py_test/list_parameters: rcl_interfaces/srv/ListParameters
+    /py_test/set_parameters: rcl_interfaces/srv/SetParameters
+    /py_test/set_parameters_atomically: rcl_interfaces/srv/SetParametersAtomically
+  Service Clients:
+
+  Action Servers:
+
+  Action Clients:
+
+## 同じノードを複数立ち上げるときは名前をリマップしないと通信時に区別ができなくなる
+
+terminal#1 % ros2 run my_py_pkg py_node --ros-args -r __node:=-node1
+terminal#2 % ros2 run my_py_pkg py_node --ros-args -r __node:=-node2
+terminal#3 % ros2 run my_py_pkg py_node --ros-args -r __node:=-node3
